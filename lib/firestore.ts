@@ -4,13 +4,13 @@ import { getFirestore} from 'firebase/firestore';
 import { getDatabase} from 'firebase/database';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAznkN7UaHw2tJOMgcFbhXz_peJgxDcwvA",
-  authDomain: "daswq-710f1.firebaseapp.com",
-  projectId: "daswq-710f1",
-  storageBucket: "daswq-710f1.firebasestorage.app",
-  messagingSenderId: "390148483841",
-  appId: "1:390148483841:web:6dc053e7b96385932b4900",
-  measurementId: "G-7WKJS2H96Q"
+   apiKey: "AIzaSyBZNSfrMHsV7I9JO8UXelqaues2Xeo9d-I",
+  authDomain: "orediioo.firebaseapp.com",
+  projectId: "orediioo",
+  storageBucket: "orediioo.firebasestorage.app",
+  messagingSenderId: "53713721298",
+  appId: "1:53713721298:web:580696287a295ec2c09a0b",
+  measurementId: "G-FBMDTCESJW"
 };
 
 
